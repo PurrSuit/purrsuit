@@ -5,15 +5,22 @@ class UserController < ApplicationController
   end
 
   def show
-
+    users = User.where(params[:id])
+      user = nil
+        if (users.length > 0)
+            user = users.first
+        else
+            raise "error mano"
+        end
+        render json: user
   end
 
   def new
-    @user = User.new
+    user = User.new
   end
 
   def create
-    @user = User.new(get_params)
+    user = User.new(get_params)
     if @user.save
         render json: user
       else
