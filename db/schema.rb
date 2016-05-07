@@ -13,15 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160507174737) do
 
-
   create_table "achievements", force: :cascade do |t|
-  end
-
-  create_table "cabinet", force: :cascade do |t|
-    t.string   "annex"
-    t.integer  "id_dep"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "cabinets", force: :cascade do |t|
@@ -29,12 +21,11 @@ ActiveRecord::Schema.define(version: 20160507174737) do
     t.string   "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
 
-    
   create_table "deputies", force: :cascade do |t|
     t.integer "registration"
     t.string  "legislation_situation"
-
   end
 
   create_table "gamifications", force: :cascade do |t|
@@ -80,8 +71,8 @@ ActiveRecord::Schema.define(version: 20160507174737) do
 
   create_table "users", force: :cascade do |t|
     t.string  "password_digest"
-    t.integer "experience_points", default: 0,     null: false
-    t.boolean "role_admin",        default: false, null: false
+    t.integer "experience_points"
+    t.boolean "role_admin"
   end
 
 end
