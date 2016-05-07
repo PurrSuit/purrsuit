@@ -3,5 +3,4 @@ class Cabinet < ActiveRecord::Base
 
   validates :annex, presence: true
   validates :number, presence: true
-
 end
