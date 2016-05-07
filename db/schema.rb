@@ -16,6 +16,13 @@ ActiveRecord::Schema.define(version: 20160507174737) do
   create_table "achievements", force: :cascade do |t|
   end
 
+  create_table "cabinet", force: :cascade do |t|
+    t.string   "annex"
+    t.integer  "id_dep"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cabinets", force: :cascade do |t|
     t.string   "annex"
     t.string   "number"
