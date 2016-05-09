@@ -49,6 +49,7 @@ angular.module('starter.controllers', ['starter.services', 'ngResource'])
 //SINGLE -- Quests Details controller
 .controller('QuestCtrl', function($scope, $stateParams, Quest) {
 		$scope.quests = Quest.query();
+//		console.log(this.quests);
 		$scope.questId = $stateParams.questId;
 //  var questArray = Quest.quest.get({id: $stateParams.questId});
 //  $scope.whichQuest = questArray;//Quest.get({id: $stateParams.questId});
