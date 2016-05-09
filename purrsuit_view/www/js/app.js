@@ -53,6 +53,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])
         }
       }
     })
+    
+// Listing all users
+    .state('app.users', {
+  url: "/users",
+  views: {
+      'menuContent': {
+          templateUrl: "templates/users.html",
+          controller: 'UsersCtrl'
+      }
+  }
+})
 
   .state('app.search', {
     url: '/search',

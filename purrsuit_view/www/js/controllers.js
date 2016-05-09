@@ -42,13 +42,24 @@ angular.module('starter.controllers', ['starter.services', 'ngResource'])
 })
 
 // ALL -- Quests controller
-.controller('QuestsCtrl', function($scope, Quest) {
-    $scope.quests = Quest.query();
+.controller('QuestsCtrl', function($scope, Api) {
+    $scope.quests = Api.Quest.query();
 })
 
 //SINGLE -- Quests Details controller
-.controller('QuestCtrl', function($scope, $stateParams, Quest) {
-  $scope.quest = Quest.getData({name: $stateParams.name})
+.controller('QuestCtrl', function($scope, $stateParams, Api) {
+  $scope.quest = Api.Quest.getData({name: $stateParams.name})
+})
+
+// Users Controller
+.controller('UsersCtrl', function($scope, Api, $ionicPopup) {
+    $scope.users = Api.User.query();
+    $scope.showInfo = function(user){
+      var alertPopup = $ionicPopup.alert({
+        title: user.name,
+        template: user.email
+      });
+    };
 })
 
 .controller('PlaylistsCtrl', function($scope) {
