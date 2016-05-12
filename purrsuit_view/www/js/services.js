@@ -35,6 +35,18 @@ angular.module('starter.services', ['ngResource'])
   })
 })
 
+.factory('ServerParties', function($resource){
+  return $resource('http://localhost:3000/parties/:partyId', {
+    partyId: "@partyId"
+  })
+})
+
+.factory('ServerUf', function($resource){
+  return $resource('http://localhost:3000/ufs/:ufId', {
+    ufId: "@ufId"
+  })
+})
+
 .factory('ServerAchievements', function($resource){
   return $resource('http://localhost:3000/achievements/all.json')
 })

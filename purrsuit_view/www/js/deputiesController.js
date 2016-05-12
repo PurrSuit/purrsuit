@@ -19,6 +19,9 @@ angular.module('starter')
     function(data) {
       console.log("SERVICES: Getting Deputy (Id: " + findId + ") data from server...");
       $scope.deputy = data.deputy;
+
+      var uf_id_deputy = $scope.deputy.uf_id;
+      localStorage.setItem("DeputyUfId", uf_id_deputy);
     },
     function(error) {
       alert("Não foi possível estabelecer conexão com o servidor...");
@@ -32,7 +35,7 @@ angular.module('starter')
     $scope.deputies = [];
 
     //console.log(inputText.lenght);
-    
+
     ServerSearchDeputies.get({
         toSearch: inputText
       },
@@ -49,6 +52,22 @@ angular.module('starter')
       function(error) {
         alert("Não foi possível estabelecer conexão com o servidor...");
         console.log("SERVICES: ERROR in getting Deputies with text(" + inputText + ") data from server...");
+      })
+  }
+})
+
+.controller('GetDeputyUf', function($scope, ServerUf){
+  var uf_id_local = localStorage.getItem("DeputyUfId");
+  $scope.getUf = function() {
+    ServerUf.get({
+        ufId: uf_id_local
+      },
+      function(data) {
+        console.log("SERVICES: Getting deputy's Uf with Id(" + uf_id_local + ") data from server...")
+        $scope.deputyUf = data.uf;
+      },
+      function(error) {
+        console.log("SERVICES: Could not get deputy's Uf with Id(" + uf_id_local + ")");
       })
   }
 })
