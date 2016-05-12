@@ -35,7 +35,7 @@ angular.module('starter.services', ['ngResource'])
   })
 })
 
-.factory('ServerParties', function($resource){
+.factory('ServerParty', function($resource){
   return $resource('http://localhost:3000/parties/:partyId', {
     partyId: "@partyId"
   })
