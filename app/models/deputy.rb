@@ -19,7 +19,7 @@ class Deputy < ActiveRecord::Base
   def self.parse_deputies
     Uf.populate_ufs
     Party.parse_parties
-    
+
     url = URI.parse("http://www.camara.gov.br/SitCamaraWS/Deputados.asmx/ObterDeputados")
     request = Net::HTTP::Get.new(url.to_s)
     response = Net::HTTP.start(url.host, url.port) {|http|
@@ -39,7 +39,8 @@ class Deputy < ActiveRecord::Base
       partido = d.elements[10].text.to_s
       fone = d.elements[13].text.to_s
       email = d.elements[14].text.to_s
-
+      annexo = d.elements[12].text.to_s
+      gabinete = d.elements[11].text.to_s
 
 
       deputy = Deputy.new(
