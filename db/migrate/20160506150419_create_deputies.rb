@@ -5,6 +5,7 @@ class CreateDeputies < ActiveRecord::Migration
       t.string :deputy_name
       t.integer :registration
       t.string :legislation_situation
+      t.string :image_path
       t.references :party
       t.references :uf
     end

@@ -7,11 +7,10 @@ class CreatePeople < ActiveRecord::Migration
       t.string :name
       t.string :gender
       t.string :email
-      t.string :cpf
       t.string :age
-  
+
 			t.references :uf
-			    
+
       t.timestamps null: false
     end
   end

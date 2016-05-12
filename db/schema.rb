@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160507211711) do
+ActiveRecord::Schema.define(version: 20160507210159) do
 
   create_table "achievements", force: :cascade do |t|
   end
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160507211711) do
     t.string  "deputy_name"
     t.integer "registration"
     t.string  "legislation_situation"
+    t.string  "image_path"
     t.integer "party_id"
     t.integer "uf_id"
   end
