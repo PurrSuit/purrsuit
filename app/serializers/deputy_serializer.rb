@@ -1,3 +1,3 @@
 class DeputySerializer < ActiveModel::Serializer
-  attributes :id, :name,:age, :registration, :legislation_situation
+  attributes :id, :name,:deputy_name,:age,:gender,:uf_id,:party_id,:registration,:legislation_situation
 end
