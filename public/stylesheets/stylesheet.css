@@ -1,5 +1,36 @@
 @import "bootstrap";
 
+.option_button{
+	margin-left: 5px;
+}
+
+.create_button{
+	float: right;
+	margin-right: 11px;
+	margin-top: -29px;
+}
+
+.button_group{
+	margin-top: 10px;
+}
+
+.gamification_fields{
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+	margin: 0 auto;
+	display: table;
+	margin-top: 30px;
+}
+
+.gamification_button{
+	margin: 0 auto;
+	display: table;
+	margin-top: 40px;
+}
+
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
